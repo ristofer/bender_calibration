@@ -1,0 +1,18 @@
+<launch>
+
+  <arg name="velocity_factor" default="1.0" />
+
+  <!-- Disable auto white balance and exposure -->
+
+
+  <rosparam command="delete" param="robot_calibration" />
+  <node pkg="robot_calibration" type="calibrate" name="robot_calibration"
+        args="--manual"
+        output="screen" required="true">
+    <param name="velocity_factor" value="$(arg velocity_factor)" />
+    <rosparam file="$(find bender_calibration)/config/capture.yaml" command="load" />
+  </node>
+
+
+  
+</launch>
