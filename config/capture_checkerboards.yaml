@@ -1,0 +1,6 @@
+features:
+  checkerboard_finder:
+    type: robot_calibration/CheckerboardFinder
+    topic: /bender/sensors/rgbd_head/depth/points
+    camera_sensor_name: bender_camera
+chain_sensor_name: arm

@@ -1,0 +1,14 @@
+<launch>
+
+  <!--arg name="velocity_factor" default="1.0" /-->
+
+  <!-- Disable auto white balance and exposure -->
+  <remap from="/head_camera/depth/camera_info" to="/bender/sensors/rgbd_head/depth/camera_info"/>
+  <node pkg="bender_calibration" type="feature_test" name="feature_test"
+        output="screen" required="true">
+    <!--param name="velocity_factor" value="$(arg velocity_factor)" /-->
+    <rosparam file="$(find bender_calibration)/config/capture_checkerboards.yaml" command="load" />
+    <!--rosparam file="$(find fetch_calibration)/config/calibrate.yaml" command="load" /-->
+  </node>
+  
+</launch>

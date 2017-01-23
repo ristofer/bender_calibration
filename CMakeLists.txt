@@ -6,7 +6,10 @@ project(bender_calibration)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
     actionlib
+    camera_calibration_parsers
+    cv_bridge
     geometry_msgs
+    kdl_parser
     moveit_msgs
     nav_msgs
     robot_calibration_msgs
@@ -32,10 +35,12 @@ catkin_package(
     include
   CATKIN_DEPENDS
     actionlib
+    camera_calibration_parsers
+    cv_bridge
     geometry_msgs
+    kdl_parser
     moveit_msgs
     nav_msgs
-    robot_calibration
     robot_calibration_msgs
     rosbag
     roscpp
@@ -55,8 +60,16 @@ include_directories(include ${Boost_INCLUDE_DIRS}
 
 add_executable(chain_test src/chain_test.cpp
                           src/chain_manager.cpp)
-#add_library(robot_calibration src/chain_manager.cpp)
+
 target_link_libraries(chain_test ${Boost_LIBRARIES} ${catkin_LIBRARIES})
+
+add_executable(feature_test src/checkerboard_finder.cpp
+                            src/feature_finder.cpp
+                            src/feature_test.cpp)
+
+#add_library(robot_calibration src/chain_manager.cpp)
+
+target_link_libraries(feature_test ${Boost_LIBRARIES} ${catkin_LIBRARIES})
 ## - - - RecognizerROS- - - 
 # add_executable(recognizer_ros
 #   src/RecognizerROS.cpp
