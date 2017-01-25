@@ -1,0 +1,35 @@
+chains:
+  - name: l_arm
+    topic: /bender/l_arm_controller/follow_joint_trajectory
+    joints:
+     - l_shoulder_pitch_joint
+     - l_shoulder_roll_joint
+     - l_shoulder_yaw_joint
+     - l_elbow_pitch_joint
+     - l_elbow_yaw_joint
+     - l_wrist_pitch_joint
+    planning_group: l_arm
+  - name: r_arm
+    topic: /bender/r_arm_controller/follow_joint_trajectory
+    joints:
+     - r_shoulder_pitch_joint
+     - r_shoulder_roll_joint
+     - r_shoulder_yaw_joint
+     - r_elbow_pitch_joint
+     - r_elbow_yaw_joint
+     - r_wrist_pitch_joint
+    planning_group: r_arm
+  - name: light_head
+    topic: /bender/light_head_controller/follow_joint_trajectory
+    joints:
+     - light_head_pitch_joint
+     - light_head_yaw_joint
+duration: 2.0
+features:
+  checkerboard_finder:
+    type: robot_calibration/CheckerboardFinder
+    topic: /camera/depth_registered/points
+    camera_sensor_name: camera
+    chain_sensor_name: r_arm
+    points_x: 4
+    points_y: 5
