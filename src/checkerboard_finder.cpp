@@ -67,6 +67,10 @@ void CheckerboardFinder::cameraCallback(const sensor_msgs::PointCloud2& cloud)
 {
   if (waiting_)
   {
+<<<<<<< HEAD
+=======
+    ROS_INFO("Cloud received");
+>>>>>>> 8da5bfd2e95478da8d64bec1746111ee30a13a2a
     cloud_ = cloud;
     waiting_ = false;
   }
@@ -99,6 +103,10 @@ bool CheckerboardFinder::find(robot_calibration_msgs::CalibrationData * msg)
   // Try up to 50 frames
   for (int i = 0; i < 50; ++i)
   {
+<<<<<<< HEAD
+=======
+    ROS_INFO("In: Find");
+>>>>>>> 8da5bfd2e95478da8d64bec1746111ee30a13a2a
     if (findInternal(msg))
       return true;
   }
