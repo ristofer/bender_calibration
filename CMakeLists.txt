@@ -67,11 +67,8 @@ add_executable(feature_test src/checkerboard_finder.cpp
                             src/feature_finder.cpp
                             src/feature_test.cpp)
 
-<<<<<<< HEAD
 #add_library(robot_calibration src/chain_manager.cpp)
 
-target_link_libraries(feature_test ${Boost_LIBRARIES} ${catkin_LIBRARIES})
-=======
 target_link_libraries(feature_test ${Boost_LIBRARIES} ${catkin_LIBRARIES})
 
 add_executable(calibration_test src/calibration_test.cpp
@@ -81,7 +78,6 @@ add_executable(calibration_test src/calibration_test.cpp
 
 target_link_libraries(calibration_test ${Boost_LIBRARIES} ${catkin_LIBRARIES})
 
->>>>>>> 8da5bfd2e95478da8d64bec1746111ee30a13a2a
 ## - - - RecognizerROS- - - 
 # add_executable(recognizer_ros
 #   src/RecognizerROS.cpp
@@ -95,8 +91,4 @@ target_link_libraries(calibration_test ${Boost_LIBRARIES} ${catkin_LIBRARIES})
 
 install(DIRECTORY include/${PROJECT_NAME}/
     DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-<<<<<<< HEAD
 )
-=======
-)
->>>>>>> 8da5bfd2e95478da8d64bec1746111ee30a13a2a

@@ -28,10 +28,7 @@ duration: 2.0
 features:
   checkerboard_finder:
     type: robot_calibration/CheckerboardFinder
-    topic: /bender/sensors/rgbd_head/depth/points
-=======
     topic: /camera/depth_registered/points
->>>>>>> 8da5bfd2e95478da8d64bec1746111ee30a13a2a
     camera_sensor_name: camera
     chain_sensor_name: r_arm
     points_x: 4
